@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+    <link rel="stylesheet" href="css/control.css">
+    <script type='text/javascript' src="js/control.js"></script>
+    <script src="https://kit.fontawesome.com/70f799dfe2.js" crossorigin="anonymous"></script>
+
+    <style>
+        #listaRegistros{ display: none; }
+        #cadastroRegistro{
+            display: none;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        body[page=lista] #listaRegistros{ display: block; }
+        body[page=cadastro] #cadastroRegistro{ display: flex; }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            margin-top: 0;
+        }
+
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table th,
+        table td{
+            font-size: 14px;
+            padding: 10px 15px;
+            border: solid 1px #ccc;
+        }
+
+        button{
+            border-radius: 15px;
+            text-transform: uppercase;
+            color: teal;
+            font-size: 10px;
+            padding: 10px 50px;
+            cursor: pointer;
+            font-weight: bold;
+            align-self: center;
+        }
+        button.cinza{
+            background-color: #ccc;
+            color: #666;
+        }
+        button.vermelho{
+            background-color: teal;
+            color: white;
+        }
+        button:hover{
+            opacity: 0.8;
+            background-color: teal;
+            color: white;
+        }
+
+        input{
+            border: solid 1px #ccc;
+            border-radius: 4px;
+            padding: 10px;
+        }
+
+        .label>div{
+            display: flex;
+        }
+        .label>div>input{
+            flex: 1;
+        }
+    </style>
+
+</head>
+<body page='lista'>
+    
+    <div id='listaRegistros'>
+
+        <h2 class="title title-sec">Gestão de Posts</h2>
+        <label class="label-input" for="">
+            <i class="fas fa-user icon-modify"></i>
+            <input type="user" placeholder="Bem Vindo, Gestor" style="border: none; font-size: 14px; outline: 0;" readonly>
+            <a href="index.html">Sair</a>
+        </label>
+        
+        <div style='display: flex;'>
+            <input style='flex:1' placeholder="PESQUISAR" autofocus id='inputPesquisa' />
+        </div>
+
+        <table>
+            <thead>
+                <tr class="colunas">
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Data</th>
+                    <th>Plataforma</th>
+                    <th>Usuario</th>
+                </tr>
+            </thead>
+            <tbody id='listaRegistrosBody'></tbody>
+        </table>
+
+        <div>
+            <button class="buttonmg" onclick="vizualizar('cadastro', true)">Novo post</button>
+        </div>
+        <div style="margin-top: 25px;">
+            <a href="rel.html" class="btn btn-primary" style="
+            color: white;
+            background-color: teal";>Gerar Relatorio
+            </a>
+        </div>
+        
+
+    </div>
+
+    <form id='cadastroRegistro'>
+
+        <h2 class="title title-sec">Gestão de Posts</h2>
+
+        <div class='label'>
+            <div>ID</div>
+            <div>
+                <input type='number' readonly id='id' />
+            </div>
+        </div>
+
+        <div class="label">
+            <div>Nome</div>
+            <div>
+                <input class="input" type="text" id='name'/>
+            </div>
+        </div>
+
+        <div class="label">
+            <div>Data</div>
+            <div>
+                <input class="input" type="datetime" id='data'/>
+            </div>
+        </div>
+
+        <div class="label">
+            <div>Plataforma</div>
+            <div>
+                <input class="input" type="text" id='plataforma'/>
+            </div>
+        </div>
+
+        <div class="label">
+            <div>Usuario</div>
+            <div>
+                <input class="input" type="text" id='usuario'/>
+            </div>
+        </div>
+
+        <div>
+            <button>Salvar</button>
+            <button onclick="vizualizar('lista')" class="cinza" type='button'>Cancelar</button>
+        </div>
+
+    </form>
+
+</body>
+</html>

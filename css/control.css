@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Recursive&display=swap');
+*
+{
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.btn
+{
+    border-radius: 15px;
+    text-transform: uppercase;
+    color: teal;
+    font-size: 10px;
+    padding: 10px 50px;
+    cursor: pointer;
+    font-weight: bold;
+    align-self: center;
+    margin-top: 1rem;
+}
+
+.btn-primary
+{
+    background-color: transparent;
+    border: 1px solid teal;
+}
+
+.btn-primary:hover
+{
+    background-color: teal;
+    color: white;
+}
+
+.input
+{
+    border: solid 1px #ccc;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.buttonmg
+{
+    margin-top: 20px;
+}
+
+.title
+{
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.title-sec
+{
+    color: teal;
+}
+
+.colunas
+{
+    background-color: cadetblue;
+}
+
+.icon
+{
+    margin-bottom: 10px;
+}

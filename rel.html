@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatorio</title>
+    <link rel="stylesheet" href="css/control.css">
+    <script type='text/javascript' src="js/rel.js"></script>
+
+    <style>
+        #listaRegistros{ display: none; }
+        #cadastroRegistro{
+            display: none;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        body[page=lista] #listaRegistros{ display: block; }
+        body[page=cadastro] #cadastroRegistro{ display: flex; }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            margin-top: 0;
+        }
+
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table th,
+        table td{
+            font-size: 14px;
+            padding: 10px 15px;
+            border: solid 1px #ccc;
+        }
+
+        .label>div{
+            display: flex;
+        }
+        .label>div>input{
+            flex: 1;
+        }
+    </style>
+
+</head>
+<body page='lista'>
+    
+    <div id='listaRegistros'>
+
+        <h2 class="title title-sec">Relatorio Mensal</h2>
+
+        <table>
+            <thead>
+                <tr class="colunas">
+                    <th>Nome</th>
+                    <th>Data</th>
+                    <th>Plataforma</th>
+                    <th>Curtidas</th>
+                </tr>
+            </thead>
+            <tbody id='listaRegistrosBody'></tbody>
+        </table>
+        <div style="margin-top: 15px;">
+            <a href="control.html" class="btn btn-primary" style="
+            color: white;
+            background-color: teal";>Voltar</a>
+        </div>
+        
+    </div>
+
+</body>
+</html>
